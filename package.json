@@ -1,0 +1,15 @@
+{
+  "name": "cypress-cucumber-screenplay",
+  "version": "1.0.0",
+  "description": "Automatización de flujo en selaski utilizando Cypress, Cucumber y Screenplay",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "16.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "12.17.4",
+    "cypress-xpath": "^2.0.1"
+  }
+}

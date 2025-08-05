@@ -2,6 +2,7 @@ const { defineConfig } = require('cypress');
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 const addCucumberPreprocessorPlugin = require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin;
+const path = require("path");
 
 module.exports = defineConfig({
   e2e: {
@@ -21,5 +22,15 @@ module.exports = defineConfig({
       return config;
     },
   },
-  defaultCommandTimeout: 1000, // aumenta el tiempo de espera por comando
+  reporter: 'cypress-multi-reporters',
+reporterOptions: {
+  reporterEnabled: 'mochawesome',
+  mochawesomeReporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true
+  }
+},
+defaultCommandTimeout: 1000 // aumenta el tiempo de espera por comando
 });
